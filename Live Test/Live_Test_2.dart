@@ -1,7 +1,17 @@
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+// main() {
+//   runApp(const myApp());
+// }
 
-main() {
-  runApp(const myApp());
+void main() {
+  runApp(
+    DevicePreview(
+      enabled: !kReleaseMode,
+      builder: (context) => const myApp(), // Wrap your app
+    ),
+  );
 }
 
 class myApp extends StatelessWidget {
@@ -62,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
                 ),
               ),
             ),
-
+            // Add more profile sections here
           ],
         ),
       ),
